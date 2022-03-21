@@ -1,0 +1,12 @@
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\bin\Debug\netcoreapp3.1\ReviewerDomain.deps.json
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\bin\Debug\netcoreapp3.1\ReviewerDomain.runtimeconfig.json
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\bin\Debug\netcoreapp3.1\ReviewerDomain.runtimeconfig.dev.json
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\bin\Debug\netcoreapp3.1\ReviewerDomain.dll
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\bin\Debug\netcoreapp3.1\ReviewerDomain.pdb
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.csprojAssemblyReference.cache
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.AssemblyInfoInputs.cache
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.AssemblyInfo.cs
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.dll
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.pdb
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.genruntimeconfig.cache
+C:\Users\DT User2\Desktop\Reviewer\ReviewerDomain\obj\Debug\netcoreapp3.1\ReviewerDomain.csproj.CoreCompileInputs.cache
