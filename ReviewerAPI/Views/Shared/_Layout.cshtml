@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+
+   
+</head>
+<body>
+    <div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Početna</a>
+            <a asp-controller="Home" asp-action="Index" asp-route-category="Skin care">Njega Lica</a>
+            <a asp-controller="Home" asp-action="Index" asp-route-category="Makeup">Šminka</a>
+            <a asp-controller="Home" asp-action="Index" asp-route-category="Hair care">Njega kose</a>
+
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-controller="Edit" asp-action="Edit">Dodaj recenziju</a>
+                }
+                <a asp-controller="Auth" asp-action="Logout">Odjavi se</a>
+            }
+            else
+            {
+                <a asp-controller="Auth" asp-action="Login">Prijavi se</a>
+            }
+        </nav>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", false)
+</body>
+</html>
+
+

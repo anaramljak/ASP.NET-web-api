@@ -1,0 +1,48 @@
+﻿@model PostViewModel
+@{
+
+}
+
+<div>
+    <form asp-controller="Edit" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <div>
+            <label>Naziv proizvoda</label>
+            <input asp-for="Title" />
+        </div>
+
+        <div>
+            <label>Opis</label>
+            <input asp-for="Description" />
+        </div>
+
+        <div>
+            <label>Oznake</label>
+            <input asp-for="Tags" />
+        </div>
+
+        <div>
+            <label>Kategorije</label>
+            <select asp-for="Category">
+                <option value="Skin care">Njega lica</option>
+                <option value="Makeup">Šminka</option>
+                <option value="Hair care">Kosa</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Recenzija</label>
+            <input asp-for="Body" />
+        </div>
+
+        <div>
+            <label>Slika</label>
+            <input asp-for="Image" />
+        </div>
+
+        <div>
+            <input type="submit" value="Objavi" />
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,22 @@
+﻿@model LoginViewModel
+
+@{
+
+}
+
+<form class="sign-in-form" asp-controller="Auth" asp-action="Login" method="post">
+    <div>
+        <label>Email</label>
+        <input asp-for="UserName" />
+    </div>
+
+    <div>
+        <label>Šifra</label>
+        <input asp-for="Password" />
+    </div>
+    <div>
+        <input type="submit" value="Prijavi se" />
+        <a asp-controller="Auth" asp-action="Register">Registriraj se</a>
+    </div>
+  
+</form>

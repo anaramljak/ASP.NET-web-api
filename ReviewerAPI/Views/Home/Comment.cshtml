@@ -1,0 +1,20 @@
+﻿@model CommentViewModel
+
+@{
+
+}
+
+<div class="review-section">
+    <form method="post" asp-controller="Home" asp-action="Review">
+        <div class="form-group">
+            <label>Komentiraj</label>
+            <input asp-for="Message" rows="3" />
+
+        <input asp-for="PostId" type="hidden" />
+        <input asp-for="ReviewId" type="hidden" />
+
+
+
+        <button type="submit">Objavi</button>
+    </form>
+</div>

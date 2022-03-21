@@ -1,0 +1,104 @@
+﻿@model Post
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.Description = Model.Description;
+    ViewBag.Keywords = $"{Model.Tags?.Replace(",", " ")} {Model.Category}";
+}
+
+
+<div class="container">
+    <div class="post no-shadow">
+        @if (!String.IsNullOrEmpty(Model.Image))
+        {
+            var image_path = $"/Image/{Model.Image}";
+            <img src="@image_path" />
+        }
+
+    </div>
+    @{
+        int sum = 0;
+        foreach (var rv in Model.Review)
+        {
+            sum += rv.Rating; 
+        }
+
+        double avrRating = Model.Review.Count > 0 ? (double)sum / Model.Review.Count : 0;
+
+
+    }
+        <div class="d-flex justify-content-center">
+            <div class="content text-center">
+                <div class="ratings">
+                    <span class="product-rating">@avrRating</span><span>/5</span>
+                   
+                    <div class="rating-text"> <span>@Model.Review.Count ocjene </span> </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-body">
+            @Html.Raw(Model.Body)
+
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-controller="Edit" asp-action="Edit" asp-route-id="@Model.Id">
+                    Uredi
+                </a>
+
+                <a asp-controller="Edit" asp-action="Remove" asp-route-id="@Model.Id">
+                    Izbriši
+                </a>
+            }
+
+            <div class="review">
+                @{
+                    await Html.RenderPartialAsync("Review", new ReviewViewModel { PostId = Model.Id, ReviewId = 0 });
+                }
+
+                
+                @if (Model.Review != null && Model.Review.Count > 0)
+                {
+                    @foreach (var c in Model.Review)
+                    {
+                <div class="review-section">
+                    <h4> @c.Message </h4>
+                    <span class="product-rating">@c.Rating</span><span>/5</span>
+                </div>
+
+
+                        <div class="comment-section">
+                          
+                            <h6> Komentari:</h6>
+
+                            @foreach (var sc in c.Comments)
+                            {
+                                <p>
+                                    @sc.Message   <i> @sc.Created </i> 
+                                </p>
+                            }
+
+                            @{
+                                await Html.RenderPartialAsync("Comment", new CommentViewModel { PostId = Model.Id, ReviewId = c.Id });
+                            }
+                        </div>
+                    }
+                }
+            </div>
+        }
+
+        else
+        {
+            <div>
+                <a asp-action="Login" asp-controller="Auth">Prijavi se</a> da bi mogao recenzirati ili komentirati!
+            </div>
+        }
+
+    </div>
+
+
+
+
